@@ -13,7 +13,7 @@ int main ( )
 	
 	for ( unsigned int i = 0; i < 0xffffffff; i += 0x1000 )
 	{
-		const ULONG64 mappedVA = gdrv->map_physical( i , 0x100 );
+		const ULONG64 mappedVA = gdrv->map_physical( i , 0x1000 );
 		*reinterpret_cast<ULONG64*>( mappedVA ) = 0xCCCCCCCCCCCCCCCC;
 		gdrv->unmap_physical( i );
 	}
