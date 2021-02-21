@@ -65,14 +65,14 @@ private:
 	static bool device_io_control( const handle_t handle , InputBuffer* input , OutputBuffer* output )
 	{
 		return ::DeviceIoControl( handle , static_cast<std::underlying_type_t<driver_structs::ioctl_code>>( InputBuffer::ioctl_code ) ,
-								  input , sizeof( InputBuffer ) , output , sizeof( OutputBuffer ) , nullptr , nullptr );
+					  input , sizeof( InputBuffer ) , output , sizeof( OutputBuffer ) , nullptr , nullptr );
 	}
 
 	template <typename InputBuffer>
 	static bool device_io_control( const handle_t handle , InputBuffer* input )
 	{
 		return ::DeviceIoControl( handle , static_cast<std::underlying_type_t<driver_structs::ioctl_code>>( InputBuffer::ioctl_code ) ,
-								  input , sizeof( InputBuffer ) , nullptr , 0 , nullptr , nullptr );
+					  input , sizeof( InputBuffer ) , nullptr , 0 , nullptr , nullptr );
 	}
 
 public:
