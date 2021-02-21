@@ -3,12 +3,12 @@
 simplegdrv::simplegdrv( ) : driver_handle_( nullptr )
 {
 	this->driver_handle_ = CreateFile( this->driver_symbolic_link_.data( ) ,
-									   GENERIC_READ | GENERIC_WRITE ,
-									   FILE_SHARE_READ | FILE_SHARE_WRITE ,
-									   0 ,
-									   OPEN_EXISTING ,
-									   FILE_ATTRIBUTE_NORMAL ,
-									   NULL );
+						GENERIC_READ | GENERIC_WRITE ,
+						FILE_SHARE_READ | FILE_SHARE_WRITE ,
+						0 ,
+						OPEN_EXISTING ,
+						FILE_ATTRIBUTE_NORMAL ,
+						NULL );
 
 	if ( this->driver_handle_ == INVALID_HANDLE_VALUE )
 		std::cout << "[" << __FUNCTION__ << "] " << "failed to open handle to driver" << std::endl;
