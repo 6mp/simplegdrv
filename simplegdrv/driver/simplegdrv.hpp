@@ -8,8 +8,6 @@
 
 namespace driver_structs
 {
-	constexpr auto device_path = LR"(\\.\GIO)";
-
 	enum class ioctl_code : uint32_t
 	{
 		map_physical = 0xC3502004 ,
