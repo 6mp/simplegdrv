@@ -31,7 +31,7 @@ auto simplegdrv::map_physical( const physical_address_t physical_base , const ui
 		return 0;
 	}
 
-	std::cout << "[" << __FUNCTION__ << "] " << "mapped physcial memory at " << physical_base << " , VA : 0x" << std::hex << out.section_base_address << std::endl;
+	std::cout << "[" << __FUNCTION__ << "] " << "mapped physcial memory at 0x" << physical_base << " , VA : 0x" << std::hex << out.section_base_address << std::endl;
 	return out.section_base_address;
 }
 
